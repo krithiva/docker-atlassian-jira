@@ -1,4 +1,4 @@
 apiVersion: v1
 description: A Helm chart for Kubernetes
-name: docker-atlassian-jira-software
+name: docker-atlassian-jira
 version: v0.1.0
