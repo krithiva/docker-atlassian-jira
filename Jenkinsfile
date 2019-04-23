@@ -43,6 +43,7 @@ pipeline {
           sh "jx step git credentials"
           sh "jx step next-version --use-git-tag-only --tag"
           sh "apt-get install docker"
+          sh "docker --version"
           sh "docker build -t $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION) ."
           sh "docker push $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
           sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
